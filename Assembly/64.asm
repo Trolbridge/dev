@@ -1,11 +1,11 @@
 ; /usr/local/bin/nasm -f macho64 64.asm && ld -macosx_version_min 10.7.0 -lSystem -o 64 64.o && ./64
 
-global _start
+global _main
 
 
 section .text
 
-_start
+_main:
     mov     rax, 0x2000004 ; write
     mov     rdi, 1 ; stdout
     mov     rsi, msg
