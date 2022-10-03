@@ -11,25 +11,20 @@ global _main
  
 _main:
 
-    mov     rcx, 4                  ; Counter 9
+;    mov     rcx, 4                  ; Counter 9
+    mov     cx, 4                  ; Counter 9
 L1:
-    push    rcx
+    push    cx
     mov     rdx, newLineLen             ;third argument: message length
     lea     rsi, [rel newLine]   ; move the memory address of our message string into rsi
     mov     rdi, 1           ; write to the STDOUT file
     mov     rax, 0x2000004   ; invoke SYS_WRITE (kernel opcode 4)
     syscall
-    pop     rcx
+    pop     cx
 
-    dec     rcx
-    cmp     rcx, 0x0                  
+    dec     cx
+    cmp     cx, 0x0                  
     jnz     L1
-
-    mov     rdx, newLineLen             ;third argument: message length
-    lea     rsi, [rel newLine]   ; move the memory address of our message string into rsi
-    mov     rdi, 1           ; write to the STDOUT file
-    mov     rax, 0x2000004   ; invoke SYS_WRITE (kernel opcode 4)
-    syscall
 
     mov     rdx, helloLen             ;third argument: message length
     lea     rsi, [rel msg]   ; move the memory address of our message string into rsi
@@ -49,10 +44,11 @@ L1:
     syscall
 
 SECTION .data
-newLine     db      '\n!', 0x0A ; assign msg variable
+newLine     db      'Hi my LOVEY YOU ARE DELICIOUS!', 0x0A ; assign msg variable
 newLineLen equ     $ - newLine             ;length of our dear string
 
-msg     db      'Hello World!', 0x0A ; assign msg variable
+;msg     db      'Hello World!', 0x0A ; assign msg variable
+msg     db      'Hello World!' ; assign msg variable
 helloLen equ     $ - msg             ;length of our dear string
 
 msg1    db      'Hello Jesus!', 0x0A
