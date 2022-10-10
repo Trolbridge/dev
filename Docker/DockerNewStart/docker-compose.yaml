@@ -1,16 +1,6 @@
-version: "3"
+version: "3.9"
 services:
-  alpine_base: #docker run -it -v ${PWD}:/work -w /work -p 5005:5000 dennismitchellx/php:1.0.0 /bin/sh
-    container_name: alpine_base_container_name
-    image: dennismitchellx/alpine_base_container_name:1.0.2
+  alpine_base1: 
+    container_name: alpine_base11
+    #    image: "dennismitchellx/alpine_base1:1.0.2"
     build: ./alpine_base
-    working_dir: /work
-    entrypoint: /bin/sh
-    stdin_open: true
-    tty: true
-    volumes:
-      - ./app:/app
-    ports:
-      - 5005:5000
-volumes:
-  mysqldata: {}
