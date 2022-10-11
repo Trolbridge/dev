@@ -1,3 +1,4 @@
 FROM alpine:3.14
 RUN apk update && apk add tzdata
+RUN apk add build-base
 ENV TZ=America/Detroit
