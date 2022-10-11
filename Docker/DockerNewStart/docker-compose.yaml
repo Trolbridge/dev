@@ -1,6 +1,6 @@
 version: "3.9"
 services:
-  alpine_base1: 
+  alpine_base: 
     container_name: alpine_base11
     #    image: "dennismitchellx/alpine_base1:1.0.2"
     build: ./alpine_base
