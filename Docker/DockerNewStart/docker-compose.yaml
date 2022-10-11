@@ -1,6 +1,12 @@
 version: "3.9"
 services:
   alpine_base: 
-    container_name: alpine_base11
-    #    image: "dennismitchellx/alpine_base1:1.0.2"
+    container_name: alp
+    image: dennismitchellx/alp:1.0.0
     build: ./alpine_base
+    working_dir: /work
+    entrypoint: /bin/sh
+    stdin_open: true
+    tty: true
+    volumes:
+      - ./alpine_base/src/:/work
