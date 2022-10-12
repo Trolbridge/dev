@@ -1,4 +1,5 @@
-version: "3.9"
+#version: "3.9"
+version: "3"
 services:
   alpine_base: 
     container_name: alp
